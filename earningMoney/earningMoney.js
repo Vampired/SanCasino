@@ -1,19 +1,23 @@
 const circle_to_click = document.getElementById('circle_to_click');
-let add_money_button = document.getElementById('add_money_button');
+let user_balance_input = document.getElementById('user_balance_input');
 const drop_money_btn = document.getElementById('drop_money_btn'); 
+const change_page_to_wheel = document.getElementById('roulette_wheel_button'); 
 
 get_money_ammount()
 circle_to_click.addEventListener("click", increase_money);
 circle_to_click.addEventListener("click", show_dolars);
 drop_money_btn.addEventListener("click", drop_money);
+change_page_to_wheel.addEventListener("click", change_page, false);
 
-circle_to_click.addEventListener("click", update_display, false);
+function change_page() {
+    document.location.href = "/RouletteWheel/RouletteWheel.html";
+};
 
 function increase_money() {
   let current_balance = localStorage.getItem('balance');
   current_balance++;
   localStorage.setItem('balance', current_balance);
-  add_money_button.innerHTML = current_balance + "$"
+  user_balance_input.innerHTML = current_balance + "$"
   get_money_ammount()
 };
 
@@ -26,25 +30,21 @@ function drop_money() {
 function get_money_ammount() {
   let test = localStorage.getItem('balance');
   if(test == null) {
-    add_money_button.innerHTML = "000$";
+    user_balance_input.innerHTML = "000$";
   }
   else if(test <= 9) {
-    add_money_button.innerHTML = "00" + test + "$";
+    user_balance_input.innerHTML = "00" + test + "$";
   }
     else if(test <= 99) {
-    add_money_button.innerHTML = "0" + test + "$";
+    user_balance_input.innerHTML = "0" + test + "$";
   }
   else {
-    add_money_button.innerHTML = test + "$";
+    user_balance_input.innerHTML = test + "$";
     
   }
   
 }
 
-function update_display() {
-    console.log()
-    console.log()
-}
 
 function show_dolars() {
     const dolar = document.createElement("div");

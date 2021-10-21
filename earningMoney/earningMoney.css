@@ -1,32 +1,28 @@
+*{
+	box-sizing:border-box;
+    font-family:Roboto;
+}
+
 body {
+    width: 100vw;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
     user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: none;
-    margin: none;
-    background-color: #666;
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
 }
 
 .wrapper {
-  width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.header {
-  width: 100%;
-  font-size: 24px;
-  font-weight: 700;
-  background-color: gray;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 
@@ -63,23 +59,9 @@ body {
   font-weight: bold;
 }
 
-.balance_window {
-  background-color: gray;
-  display: flex;
-}
 
-.add_money_button {
-  color: #2ECC71;
-  margin-left: 7px;
-}
 
-.drop_money_btn {
-  color: #CF000F;
-  font-size: 16px;
-  cursor: pointer;
-  border: solid red 0.5px;
-  padding: 3.5px;
-  display: flex;
-  align-self: stretch;
-}
+
+
+
 
