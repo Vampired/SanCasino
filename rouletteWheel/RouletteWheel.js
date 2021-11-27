@@ -57,7 +57,7 @@ function disable_buttons_while_spinning() {
 
 
  function change_page() {
-    document.location.href = "/earningMoney/earningMoney.html";
+    document.location.href = "../earningMoney/earningMoney.html";
 };
 
  function spin_the_wheel() {
