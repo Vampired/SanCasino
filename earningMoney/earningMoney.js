@@ -10,7 +10,7 @@ drop_money_btn.addEventListener("click", drop_money);
 change_page_to_wheel.addEventListener("click", change_page, false);
 
 function change_page() {
-    document.location.href = "/RouletteWheel/RouletteWheel.html";
+    document.location.href = "../RouletteWheel/RouletteWheel.html";
 };
 
 function increase_money() {
