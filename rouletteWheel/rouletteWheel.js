@@ -1,7 +1,6 @@
 let container = document.querySelector(".container");
 let spin_btn = document.getElementById("spin");
 let display = document.querySelector('.display');
-const change_page_to_earning_money = document.getElementById('earning_money_button'); 
 
 let number = 0;
 let stopnie = 45; // stopnie 360/7
@@ -17,8 +16,19 @@ let stopnie = 45; // stopnie 360/7
     8: 15,
   };
  
+const change_page_to_earning_money = document.getElementById('earning_money_button');
+const change_page_to_blackjack_cards = document.getElementById('blackjack_cards_button');
+
+change_page_to_earning_money.addEventListener("click", change_page_to_earning, false);
+change_page_to_blackjack_cards.addEventListener("click", change_page_to_blackjack, false);
+
+function change_page_to_earning() {
+  document.location.href = "../earningMoney/earningMoney.php";
+};
+function change_page_to_blackjack() {
+document.location.href = "../blackjackCards/blackjackCards.php";
+};
  
- change_page_to_earning_money.addEventListener("click", change_page, false);
  spin_btn.addEventListener("click", spin_the_wheel, false);
 
 
@@ -46,6 +56,7 @@ function disable_buttons_while_spinning() {
 
  function handleWin(actualDeg) {
     const wygrana = Math.ceil(actualDeg / stopnie);
+    console.log(wygrana);
     display.innerHTML = wygranatab[wygrana];
     let current_balance = localStorage.getItem('balance')
     new_current_balance = parseInt(current_balance) + wygranatab[wygrana]
@@ -54,11 +65,6 @@ function disable_buttons_while_spinning() {
     spin_btn.addEventListener("click", spin_the_wheel, false);
     
   };
-
-
- function change_page() {
-    document.location.href = "../earningMoney/earningMoney.html";
-};
 
  function spin_the_wheel() {
     spin_btn.removeEventListener("click", spin_the_wheel, false);
@@ -73,6 +79,7 @@ function disable_buttons_while_spinning() {
             container.style.transition = 'none';
             display.innerHTML = "-";
             number = Math.floor(5000 + Math.random() * 5000);
+            console.log(number);
             container.style.transition = 'all 2s ease-out';
             container.style.transform = `rotate(${number-22.5}deg)`;
         }

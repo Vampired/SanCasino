@@ -1,23 +1,30 @@
 const circle_to_click = document.getElementById('circle_to_click');
 let user_balance_input = document.getElementById('user_balance_input');
 const drop_money_btn = document.getElementById('drop_money_btn'); 
-const change_page_to_wheel = document.getElementById('roulette_wheel_button'); 
+const change_page_to_wheel = document.getElementById('roulette_wheel_button');
+const change_page_to_blackjack = document.getElementById('blackjack_cards_button'); 
 
 get_money_ammount()
 circle_to_click.addEventListener("click", increase_money);
 circle_to_click.addEventListener("click", show_dolars);
 drop_money_btn.addEventListener("click", drop_money);
-change_page_to_wheel.addEventListener("click", change_page, false);
 
-function change_page() {
-    document.location.href = "../rouletteWheel/rouletteWheel.html";
+
+change_page_to_wheel.addEventListener("click", change_page_to_roulette, false);
+change_page_to_blackjack.addEventListener("click", change_page_to_blackjack_cards, false);
+
+function change_page_to_roulette() {
+  document.location.href = "../RouletteWheel/RouletteWheel.php";
+};
+function change_page_to_blackjack_cards() {
+document.location.href = "../blackjackCards/blackjackCards.php";
 };
 
 function increase_money() {
   let current_balance = localStorage.getItem('balance');
   current_balance++;
   localStorage.setItem('balance', current_balance);
-  user_balance_input.innerHTML = current_balance + "$"
+  user_balance_input.innerHTML = current_balance + "$";
   get_money_ammount()
 };
 

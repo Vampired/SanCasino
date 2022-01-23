@@ -14,7 +14,7 @@
     font-family: Roboto;
 }
 
-.roulette_wheel_button {
+.roulette_wheel_button, .earning_money_button, .blackjack_cards_button {
     padding: 10px;
     border: solid white 2px;
     border-radius: 50%;
@@ -22,22 +22,11 @@
     
 }
 
-.earning_money_button {
-    padding: 10px;
-    border: solid white 2px;
-    border-radius: 50%;
-    cursor: pointer;
-    
+
+.roulette_wheel_button:hover, .earning_money_button:hover, .blackjack_cards_button:hover {
+    color: #2ECC71;
 }
 
-.roulette_wheel_button:hover {
-    color: #2ECC71;
-    
-}
-.earning_money_button:hover {
-    color: #2ECC71;
-    
-}
 
 .balance_window {
   display: flex;
@@ -54,3 +43,4 @@
   border: solid #fff 0.5px;
   padding: 3.5px;
 }
+
